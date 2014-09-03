@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PnpClient</title>
+  <title><%= content_for?(:title) ? yield(:title) + " | PnP Client" : "PnP Client" %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= content_for?(:body_classes) ? "pnpC " + yield(:body_classes) : "pnpC" %>">
 
+<div class="pnpC-container col-xs-12 col-sm-5 col-md-5">
+
+<div class="pnpC-content">
 <%= yield %>
+</div>
+
+<div class="pnpC-clearer"></div>
+
+<div class="pnpC-footer">
+  <div class="pnpC-credits">P n' P app</div>
+  <div class="pnpC-tagline">polite to register P n' P</div>
+</div>
+
+</div>
 
 </body>
 </html>
