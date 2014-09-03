@@ -1,10 +1,18 @@
-<div class="pnpC-weeks">
+<% title 'Weeks' %>
+<% body_classes "pnpC pnpC-week pnpC-index" %>
+<h1><%= yield :title %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<div class="pnpC-date">Today is <%= @strToday %></div>
 
 <table class="table">
   <thead>
     <tr>
       <th>Firstday</th>
-      <th>Comment</th>
+      <th>oAVG</th>
+      <th>dAVG</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -12,5 +20,3 @@
     <%= render @weeks %>
   </tbody>
 </table>
-
-</div>
