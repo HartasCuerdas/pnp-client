@@ -32,7 +32,11 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
-resources :weeks
+resources :days
+
+resources :weeks do
+  resources :days
+end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
