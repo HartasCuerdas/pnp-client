@@ -1,0 +1,28 @@
+<% title "Day (#{@day.str_date})" %>
+<% body_classes "pnp-day pnp-show" %>
+<div id="pnpC-top-section">
+
+  <h1><%= yield :title %></h1>
+  <div class="pnpC-totals">
+    oTotal: <span id="oTotal"><%= @day.oTotal %></span>, dTotal: <span id="dTotal"><%= @day.dTotal %></span>
+  </div>
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="pnpC-controls">
+    <%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
+  </div>
+
+</div>
+
+<div class="pnpC-table-container">
+
+ 
+
+</div>
+
+<div class="pnpC-clearer"></div>
+
+<div class="pnpC-controls">
+  <%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
+</div>
