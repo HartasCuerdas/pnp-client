@@ -17,7 +17,22 @@
 
 <div class="pnpC-table-container">
 
- 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Timekey</th>
+        <th>O</th>
+        <th>D</th>
+      </tr>
+    </thead>
+      <% @day.ods.each do |od| %>
+        <tr>
+          <td><%= od.timekey %></td>
+          <td><%= od.o %></td>
+          <td><%= od.d %></td>
+        </tr>
+      <% end %> 
+  </table>
 
 </div>
 
