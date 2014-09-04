@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
 resources :ods do
   put 'toggle_o', :on => :member
+  put 'toggle_d', :on => :member
 end
 
 resources :days do
