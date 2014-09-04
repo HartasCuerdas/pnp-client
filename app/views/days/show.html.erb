@@ -1,40 +1,36 @@
 <% title "Day (#{@day.str_date})" %>
-<% body_classes "pnp-day pnp-show" %>
-<div id="pnpC-top-section">
+<% body_classes "pnpC-day pnpC-show" %>
 
-  <h1><%= yield :title %></h1>
-  <div class="pnpC-totals">
-    oTotal: <span id="oTotal"><%= @day.oTotal %></span>, dTotal: <span id="dTotal"><%= @day.dTotal %></span>
-  </div>
+<h1><%= yield :title %></h1>
 
-  <p id="notice"><%= notice %></p>
+<p>
+  oTotal: <span id="pnpC-oTotal"><%= @day.oTotal %></span>, dTotal: <span id="pnpC-dTotal"><%= @day.dTotal %></span>
+</p>
 
-  <div class="pnpC-controls">
-    <%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
-  </div>
-
+<div class="pnpC-controls">
+  <%= link_to 'Back', week_path(@day.week_id), :class=>"btn btn-small btn-primary" %>
 </div>
 
-<div class="pnpC-table-container">
+<p id="notice"><%= notice %></p>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Timekey</th>
-        <th>O</th>
-        <th>D</th>
-      </tr>
-    </thead>
-      <% @day.ods.each do |od| %>
-        <tr>
-          <td><%= od.timekey %></td>
-          <td><%= od.o %></td>
-          <td><%= od.d %></td>
-        </tr>
-      <% end %> 
-  </table>
-
-</div>
+<table id="pnpC-ods-table" class="table">
+  <thead>
+    <tr>
+      <th>Timekey</th>
+      <th>O</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @day.ods.each do |od| %>
+    <tr>
+      <td class="pnpC-timekey"><%= od.timekey %></td>
+      <td><%= link_to od.str_o_enabled, {:action => :toggle_o, :controller => :ods, :id => od.id}, :method => :put, :remote => true, :class=>"pnpC-btn-o-toggle btn btn-small " + od.str_o_TwbsBtnStyleClass %></td>
+      <td><%= link_to od.str_d_enabled, {:action => :toggle_d, :controller => :ods, :id => od.id}, :method => :put, :remote => true, :class=>"pnpC-btn-d-toggle btn btn-small " + od.str_o_TwbsBtnStyleClass %></td>
+    </tr>
+    <% end %> 
+  </tbody>
+</table>
 
 <div class="pnpC-clearer"></div>
 
