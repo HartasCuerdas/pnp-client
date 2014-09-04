@@ -32,7 +32,13 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
-resources :days
+resources :ods do
+  put 'toggle_o', :on => :member
+end
+
+resources :days do
+    resources :ods
+end
 
 resources :weeks do
   resources :days
