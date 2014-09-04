@@ -3,18 +3,30 @@ class Day < ActiveResource::Base
   belongs_to :week
   has_many :od
 
-  WELL_REGISTERED_TEXT_TRUE = 'Well'
-  WELL_REGISTERED_TEXT_FALSE = 'Poor'
+  WR_TEXT_TRUE = 'Well'
+  WR_TEXT_FALSE = 'Poor'
   
   # Twitter Bootstrap Button Style Class
-  WELL_REGISTERED_STYLE_TRUE = 'btn-success'
-  WELL_REGISTERED_STYLE_FALSE = 'btn-danger'
+  WR_STYLE_TRUE = 'btn-success'
+  WR_STYLE_FALSE = 'btn-danger'
 
   IS_TODAY_STYLE = 'is-today'
 
   def str_date
     date_date = self.date.to_date
     date_date.strftime('%b %e, %a')
+  end
+
+  def str_wr
+    self.well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
+  end
+
+  def str_wr_TwbsBtnStyleClass
+    self.well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
+  end
+
+  def str_isTodayClass
+    (self.date == Date.today) ? IS_TODAY_STYLE : ''
   end
 
 end
