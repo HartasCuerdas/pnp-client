@@ -1,8 +1,7 @@
 <% title "Week (#{@week.str_firstDay})" %>
 <% body_classes "pnpC-week pnpC-show" %>
-<h1><%= yield :title %></h1>
 
-<p id="notice"><%= notice %></p>
+<h1><%= yield :title %></h1>
 
 <p>
   <strong>Comment:</strong>
@@ -14,7 +13,9 @@
   <%= link_to 'Back', weeks_path, :class => 'btn btn-primary' %>
 </div>
 
-<table class="table">
+<p id="notice"><%= notice %></p>
+
+<table id="pnpC-stats-table" class="table">
   <thead>
     <tr>
       <th>Stats</th>
@@ -22,26 +23,26 @@
       <th>D</th>
     </tr>
   </thead>
-  <tbody id="pnpC-stats">
+  <tbody>
     <tr>
       <td>AVG</td>
-      <td id="oAVG"><%= @week.oAVG.round(1) %></td>
-      <td id="dAVG"><%= @week.dAVG.round(1) %></td>
+      <td id="pnpC-oAVG"><%= @week.oAVG.round(1) %></td>
+      <td id="pnpC-dAVG"><%= @week.dAVG.round(1) %></td>
     </tr>
     <tr>
       <td>MAX</td>
-      <td id="oMAX"><%= @week.oMAX %></td>
-      <td id="dMAX"><%= @week.dMAX %></td>
+      <td id="pnpC-oMAX"><%= @week.oMAX %></td>
+      <td id="pnpC-dMAX"><%= @week.dMAX %></td>
     </tr>
     <tr>
       <td>MIN</td>
-      <td id="oMIN"><%= @week.oMIN %></td>
-      <td id="dMIN"><%= @week.dMIN %></td>
+      <td id="pnpC-oMIN"><%= @week.oMIN %></td>
+      <td id="pnpC-dMIN"><%= @week.dMIN %></td>
     </tr>
   </tbody>
 </table>
 
-<table class="table">
+<table id="pnpC-days-table" class="table">
   <thead>
     <tr>
       <th>Day</th>
@@ -52,12 +53,12 @@
   </thead>
   <tbody>
     <% @week.days.each do |day| %>
-      <tr id="<%= day.id %>">
-        <td class=""><%= link_to day.str_date, day, :class => 'btn btn-default' %>
-        <td class=""><%= day.oTotal %></td>
-        <td class=""><%= day.dTotal %></td>
-        <td class=""><%= day.well_registered %></td>
-      </tr>
+    <tr id="pnpC-day-id-<%= day.id %>">
+      <td><%= link_to day.str_date, day, :class => 'btn btn-default' %>
+      <td><%= day.oTotal %></td>
+      <td><%= day.dTotal %></td>
+      <td><%= day.well_registered %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
