@@ -1,10 +1,10 @@
  $ ->
 
-  # well_registered CONSTANTS
-  wellRegistered_text_true = '<%= Day::WELL_REGISTERED_TEXT_TRUE %>'
-  wellRegistered_text_false = '<%= Day::WELL_REGISTERED_TEXT_FALSE %>'
-  wellRegistered_style_true = '<%= Day::WELL_REGISTERED_STYLE_TRUE %>'
-  wellRegistered_style_false = '<%= Day::WELL_REGISTERED_STYLE_FALSE %>'
+  # wr CONSTANTS
+  wr_text_true = '<%= Day::WR_TEXT_TRUE %>'
+  wr_text_false = '<%= Day::WR_TEXT_FALSE %>'
+  wr_style_true = '<%= Day::WR_STYLE_TRUE %>'
+  wr_style_false = '<%= Day::WR_STYLE_FALSE %>'
 
   # od CONSTANTS
   od_text_true = '<%= Od::OD_TEXT_TRUE %>'
@@ -23,14 +23,24 @@
 
   # well_registered
 
-  well_registered_buttons = $ '.pnp-btn-day-well-registered'
-  well_registered_buttons.on "ajax:success", (e, data, status, xhr) ->
-    animate_button($(this), wellRegistered_style_true, wellRegistered_style_false)
-    if $(this).text() == wellRegistered_text_false
-      $(this).html wellRegistered_text_true
+  wr_buttons = $ '.pnpC-day-wr-btn'
+  wr_buttons.on "ajax:success", (e, data, status, xhr) ->
+    console.log("e: " + e)
+    console.log("data: " + data)
+    console.log("status: " + status)
+    console.log("xhr: " + xhr)
+    pnpC_animate_button($(this), wr_style_true, wr_style_false)
+    if $(this).text() == wr_text_false
+      $(this).html wr_text_true
     else
-      $(this).html wellRegistered_text_false
-
+      $(this).html wr_text_false
+    $("table#pnpC-stats-table td#oAVG").html(data.oAVG.toFixed(1));
+    $("table#pnpC-stats-table td#dAVG").html(data.dAVG.toFixed(1));
+    $("table#pnpC-stats-table td#oMAX").html(data.oMAX);
+    $("table#pnpC-stats-table td#dMAX").html(data.dMAX);
+    $("table#pnpC-stats-table td#oMIN").html(data.oMIN);
+    $("table#pnpC-stats-table td#dMIN").html(data.dMIN);
+    $('table#pnpC-stats-table tbody').effect("highlight", {}, 700);
 
 
   # od
