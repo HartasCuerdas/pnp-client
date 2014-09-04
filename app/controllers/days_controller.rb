@@ -3,6 +3,7 @@ class DaysController < ApplicationController
   
   # GET /days/1
   def show
+    @day.ods = Od.find(:all, :from => "/days/#{@day.id}/ods.json")
   end
 
   private
