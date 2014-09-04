@@ -32,18 +32,18 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
-resources :ods do
-  put 'toggle_o', :on => :member
-  put 'toggle_d', :on => :member
-end
+  put 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
+  put 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
 
-resources :days do
+  put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
+
+  resources :days do
     resources :ods
-end
+  end
 
-resources :weeks do
-  resources :days
-end
+  resources :weeks do
+    resources :days
+  end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
