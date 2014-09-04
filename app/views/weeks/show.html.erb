@@ -10,7 +10,7 @@
   <%= link_to 'Edit', edit_week_path(@week) %>
 </p>
 
-<div class="pnp-controls">
+<div class="pnpC-controls">
   <%= link_to 'Back', weeks_path, :class => 'btn btn-primary' %>
 </div>
 
@@ -22,7 +22,7 @@
       <th>D</th>
     </tr>
   </thead>
-  <tbody id="pnp-stats">
+  <tbody id="pnpC-stats">
     <tr>
       <td>AVG</td>
       <td id="oAVG"><%= @week.oAVG.round(1) %></td>
@@ -41,6 +41,27 @@
   </tbody>
 </table>
 
-<div class="pnp-controls">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>O</th>
+      <th>D</th>
+      <th>Well Registered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @week.days.each do |day| %>
+      <tr id="<%= day.id %>">
+        <td class=""><%= link_to day.str_date, day, :class => 'btn btn-default' %>
+        <td class=""><%= day.oTotal %></td>
+        <td class=""><%= day.dTotal %></td>
+        <td class=""><%= day.well_registered %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pnpC-controls">
   <%= link_to 'Back', weeks_path, :class => 'btn btn-primary' %>
 </div>
