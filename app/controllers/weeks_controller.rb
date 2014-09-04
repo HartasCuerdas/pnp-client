@@ -11,6 +11,7 @@ class WeeksController < ApplicationController
   
   # GET /weeks/1
   def show
+    @week.days = Day.find(:all, :from => "/weeks/#{@week.id}/days.json")
   end
 
   # DELETE /weeks/1
