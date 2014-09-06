@@ -1,0 +1,4 @@
+en:
+  date:
+    formats:
+      m_d_wd: '%b %d, %a'
