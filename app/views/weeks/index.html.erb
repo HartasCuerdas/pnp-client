@@ -1,17 +1,17 @@
-<% title t('Weeks') %>
+<% title t('weeks') %>
 <% body_classes "pnpC pnpC-week pnpC-index" %>
 <h1><%= yield :title %></h1>
 
 <p id="notice"><%= notice %></p>
 
-<div class="pnpC-date">Today is <%= @strToday %></div>
+<div class="pnpC-date"><%= t('today_is') + ' ' + l(Date.today, format: :m_d_wd) %></div>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Firstday</th>
-      <th>oAVG</th>
-      <th>dAVG</th>
+      <th><%= t 'first_day' %></th>
+      <th><%= t 'oAVG' %></th>
+      <th><%= t 'dAVG' %></th>
       <th></th>
     </tr>
   </thead>
