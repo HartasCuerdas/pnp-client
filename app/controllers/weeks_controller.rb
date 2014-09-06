@@ -4,9 +4,6 @@ class WeeksController < ApplicationController
   # GET /weeks
   def index
     @weeks = Week.all
-
-    dateToday = Date.today
-    @strToday = dateToday.strftime('%b %d, %a')
   end
   
   # GET /weeks/1
