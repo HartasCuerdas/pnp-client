@@ -19,6 +19,8 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
-  weeks: Weeks
+  Weeks: Weeks
   today_is: Today is
   first_day: First day
+  well_registered: Well registered
+  tagline: polite to register P n' P

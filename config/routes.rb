@@ -38,7 +38,11 @@ Rails.application.routes.draw do
   put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
   scope '(:locale)' do
-    get 'weeks/:id', to: 'weeks#index', as: :week
+
+    get 'weeks', to: 'weeks#index', as: :weeks
+    get 'weeks/:id', to: 'weeks#show', as: :week
+    get 'day/:id', to: 'days#show', as: :day
+
     root :to => 'weeks#index'
   end
 

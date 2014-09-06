@@ -4,13 +4,13 @@
 <h1><%= yield :title %></h1>
 
 <p>
-  <strong>Comment:</strong>
+  <strong><%= t('Comment')+':' %></strong>
   <%= @week.comment %>
-  <%= link_to 'Edit', edit_week_path(@week) %>
+  <%= t('Edit') %>
 </p>
 
 <div class="pnpC-controls">
-  <%= link_to 'Back', weeks_path, :class => 'btn btn-primary' %>
+  <%= link_to t('Back'), weeks_path, :class => 'btn btn-primary' %>
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -18,14 +18,14 @@
 <table id="pnpC-stats-table" class="table">
   <thead>
     <tr>
-      <th>Stats</th>
+      <th><%= t('Stats') %></th>
       <th>O</th>
       <th>D</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>AVG</td>
+      <td><%= t('AVG') %></td>
       <td id="pnpC-oAVG"><%= @week.oAVG.round(1) %></td>
       <td id="pnpC-dAVG"><%= @week.dAVG.round(1) %></td>
     </tr>
@@ -45,10 +45,10 @@
 <table id="pnpC-days-table" class="table">
   <thead>
     <tr>
-      <th>Day</th>
+      <th><%= t('Day') %></th>
       <th>O</th>
       <th>D</th>
-      <th>Well Registered</th>
+      <th><%= t('well_registered') %></th>
     </tr>
   </thead>
   <tbody>
@@ -64,5 +64,5 @@
 </table>
 
 <div class="pnpC-controls">
-  <%= link_to 'Back', weeks_path, :class => 'btn btn-primary' %>
+  <%= link_to t('Back'), weeks_path, :class => 'btn btn-primary' %>
 </div>

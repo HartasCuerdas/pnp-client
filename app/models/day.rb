@@ -3,8 +3,8 @@ class Day < ActiveResource::Base
   belongs_to :week
   has_many :od
 
-  WR_TEXT_TRUE = 'Well'
-  WR_TEXT_FALSE = 'Poor'
+  WR_TEXT_TRUE = I18n.t('Well')
+  WR_TEXT_FALSE = I18n.t('Poor')
   
   # Twitter Bootstrap Button Style Class
   WR_STYLE_TRUE = 'btn-success'
@@ -14,7 +14,7 @@ class Day < ActiveResource::Base
 
   def str_date
     date_date = self.date.to_date
-    date_date.strftime('%b %e, %a')
+    I18n.l(date_date, format: :m_d_wd)
   end
 
   def str_wr
