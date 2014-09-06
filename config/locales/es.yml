@@ -1,2 +1,6 @@
 es:
-  Weeks: "Semanas"
+  weeks: Semanas
+  today_is: Hoy es
+  first_day: Primer día
+  oAVG: o PROM
+  dAVG: d PROM
