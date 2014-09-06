@@ -4,6 +4,7 @@ class WeeksController < ApplicationController
   # GET /weeks
   def index
     @weeks = Week.all
+    @str_today = I18n.l(Date.today, format: :m_d_wd)
   end
   
   # GET /weeks/1

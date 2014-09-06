@@ -4,7 +4,7 @@ class Week < ActiveResource::Base
 
   def str_firstDay
     date_firstDay = self.firstDay.to_date
-    date_firstDay.strftime('%b %e')
+    I18n.l(date_firstDay, format: :m_d)
   end
 
   def str_oAVG
