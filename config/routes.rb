@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'weeks#index'
+  #root 'weeks#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -37,12 +37,9 @@ Rails.application.routes.draw do
 
   put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
-  resources :days do
-    resources :ods
-  end
-
-  resources :weeks do
-    resources :days
+  scope '(:locale)' do
+    get 'weeks/:id', to: 'weeks#index', as: :week
+    root :to => 'weeks#index'
   end
 
   # Example resource route with more complex sub-resources:
