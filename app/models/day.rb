@@ -13,7 +13,7 @@ class Day < ActiveResource::Base
   IS_TODAY_STYLE = 'is-today'
 
   def str_date
-    date_date = self.date.to_date
+    date_date = date.to_date
     I18n.l(date_date, format: :m_d_wd)
   end
 
