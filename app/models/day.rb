@@ -18,15 +18,15 @@ class Day < ActiveResource::Base
   end
 
   def str_wr
-    self.well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
+    well_registered ? WR_TEXT_TRUE : WR_TEXT_FALSE
   end
 
   def str_wr_TwbsBtnStyleClass
-    self.well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
+    well_registered ? WR_STYLE_TRUE : WR_STYLE_FALSE
   end
 
   def str_isTodayClass
-    (self.date == Date.today) ? IS_TODAY_STYLE : ''
+    (date == Date.today) ? IS_TODAY_STYLE : ''
   end
 
 end

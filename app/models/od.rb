@@ -10,11 +10,11 @@ class Od < ActiveResource::Base
   OD_STYLE_FALSE = 'btn-default'
 
   def str_o_enabled
-    str_od_enabled(self.o)
+    str_od_enabled(o)
   end
 
   def str_d_enabled
-    str_od_enabled(self.d)
+    str_od_enabled(d)
   end
 
   def str_od_enabled(od)
@@ -22,11 +22,11 @@ class Od < ActiveResource::Base
   end
 
   def str_o_TwbsBtnStyleClass
-    str_od_TwbsBtnStyleClass(self.o)
+    str_od_TwbsBtnStyleClass(o)
   end
 
   def str_d_TwbsBtnStyleClass
-    str_od_TwbsBtnStyleClass(self.d)
+    str_od_TwbsBtnStyleClass(d)
   end
 
   def str_od_TwbsBtnStyleClass(od)
