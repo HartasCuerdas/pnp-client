@@ -1,6 +1,4 @@
-class Od < ActiveResource::Base
-  self.site = "http://localhost:3000"
-  belongs_to :day
+class Od < ResourceBase
 
   OD_TEXT_TRUE = 'ON'
   OD_TEXT_FALSE = 'OFF'

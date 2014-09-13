@@ -1,7 +1,4 @@
-class Day < ActiveResource::Base
-  self.site = "http://localhost:3000"
-  belongs_to :week
-  has_many :od
+class Day < ResourceBase
 
   WR_TEXT_TRUE = I18n.t('Well')
   WR_TEXT_FALSE = I18n.t('Poor')

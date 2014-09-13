@@ -1,6 +1,4 @@
-class Week < ActiveResource::Base
-  self.site = "http://localhost:3000"
-  has_many :days
+class Week < ResourceBase
 
   def str_firstDay
     date_firstDay = firstDay.to_date
