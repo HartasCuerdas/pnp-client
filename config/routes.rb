@@ -32,10 +32,10 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
-  put 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
-  put 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
+  patch 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
+  patch 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
 
-  put 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
+  patch 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
   scope '(:locale)' do
 

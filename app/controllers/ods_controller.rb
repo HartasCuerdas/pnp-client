@@ -1,14 +1,14 @@
 class OdsController < ApplicationController
   
-  # TOGGLE_O /ods/1
+  # PATCH /ods/1/toggle_o
   def toggle_o
-    Od.put("#{params[:id]}/toggle_o")
+    Od.patch("#{params[:id]}/toggle_o")
     render :nothing => true
   end
 
-  # TOGGLE_D /ods/1
+  # PATCH /ods/1/toggle_d
   def toggle_d
-    Od.put("#{params[:id]}/toggle_d")
+    Od.patch("#{params[:id]}/toggle_d")
     render :nothing => true
   end
 

@@ -6,9 +6,9 @@ class DaysController < ApplicationController
     @day.ods = Od.find(:all, :from => "/days/#{@day.id}/ods.json")
   end
 
-  # TOGGLE_WR /days/1
+  # PATCH /days/1/toggle_wr
   def toggle_wr
-    Day.put("#{params[:id]}/toggle_wr")
+    @week = Day.patch("#{params[:id]}/toggle_wr")
     render :nothing => true
   end
 
