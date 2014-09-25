@@ -7,7 +7,7 @@ class Day < ResourceBase
   WR_STYLE_TRUE = 'btn-success'
   WR_STYLE_FALSE = 'btn-danger'
 
-  IS_TODAY_STYLE = 'is-today'
+  IS_TODAY_STYLE = 'pnpC-is-today'
 
   def str_date
     date_date = date.to_date
