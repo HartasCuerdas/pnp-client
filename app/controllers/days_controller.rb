@@ -9,7 +9,9 @@ class DaysController < ApplicationController
   # PATCH /days/1/toggle_wr
   def toggle_wr
     @week = Day.patch("#{params[:id]}/toggle_wr")
-    render :nothing => true
+    respond_to do |format|
+      format.json { render inline: @week.body.html_safe, layout: false, status: :ok }
+    end
   end
 
   private
