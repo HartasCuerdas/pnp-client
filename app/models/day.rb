@@ -23,7 +23,7 @@ class Day < ResourceBase
   end
 
   def str_isTodayClass
-    (date == Date.today) ? IS_TODAY_STYLE : ''
+    (date == Date.today.to_s) ? IS_TODAY_STYLE : ''
   end
 
 end
