@@ -1,3 +1,4 @@
+# Day Resource Model
 class Day < ResourceBase
 
   # Text value for boolean

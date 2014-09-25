@@ -1,3 +1,4 @@
+# Od Resource Model
 class Od < ResourceBase
 
   # Text value for boolean

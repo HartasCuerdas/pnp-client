@@ -1,3 +1,4 @@
+# Days Controller
 class DaysController < ApplicationController
   before_action :set_day, only: [:show]
   

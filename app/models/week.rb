@@ -1,3 +1,4 @@
+# Week Resource Model
 class Week < ResourceBase
 
   # Style class for current week
