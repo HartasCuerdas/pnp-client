@@ -1,5 +1,5 @@
       <tr id="pnpC-week-id-<%= week.id %>">
-        <td class=""><%= link_to week.str_firstDay, week_path(week.id), :class => 'btn btn-default' %></td>
+        <td class="<%= week.str_isCurrentWeekClass %>"><%= link_to week.str_firstDay, week_path(week.id), :class => 'btn btn-default' %></td>
         <td><%= week.str_oAVG %></td>
         <td><%= week.str_dAVG %></td>
         <td><%= link_to t('Destroy'), week, method: :delete, data: { confirm: 'Are you sure?' } %></td>
