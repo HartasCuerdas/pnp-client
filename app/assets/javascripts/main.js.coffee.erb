@@ -34,13 +34,13 @@
       $(this).html wr_text_true
     else
       $(this).html wr_text_false
-    $("table#pnpC-stats-table td#oAVG").html(data.oAVG.toFixed(1));
-    $("table#pnpC-stats-table td#dAVG").html(data.dAVG.toFixed(1));
-    $("table#pnpC-stats-table td#oMAX").html(data.oMAX);
-    $("table#pnpC-stats-table td#dMAX").html(data.dMAX);
-    $("table#pnpC-stats-table td#oMIN").html(data.oMIN);
-    $("table#pnpC-stats-table td#dMIN").html(data.dMIN);
-    $('table#pnpC-stats-table tbody').effect("highlight", {}, 700);
+    $('table#pnpC-stats-table td#pnpC-oAVG').html(data.oAVG.toFixed(1));
+    $('table#pnpC-stats-table td#pnpC-dAVG').html(data.dAVG.toFixed(1));
+    $('table#pnpC-stats-table td#pnpC-oMAX').html(data.oMAX);
+    $('table#pnpC-stats-table td#pnpC-dMAX').html(data.dMAX);
+    $('table#pnpC-stats-table td#pnpC-oMIN').html(data.oMIN);
+    $('table#pnpC-stats-table td#pnpC-dMIN').html(data.dMIN);
+    $('table#pnpC-stats-table tbody').effect('highlight', {}, 700);
 
 
   # od
