@@ -31,19 +31,22 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-  scope '(:locale)' do
 
+  scope '(:locale)' do
+    # root
+    root :to => 'weeks#index'
+    # get routes
     get 'weeks', to: 'weeks#index', as: :weeks
     get 'weeks/:id', to: 'weeks#show', as: :week
     get 'day/:id', to: 'days#show', as: :day
-
-    root :to => 'weeks#index'
   end
-
+  
+  # patch routes
   patch 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
   patch 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
   patch 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
+  # delete route
   delete 'weeks/:id', to: 'weeks#destroy'
 
   # Example resource route with more complex sub-resources:
