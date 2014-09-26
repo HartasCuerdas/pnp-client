@@ -46,6 +46,8 @@ Rails.application.routes.draw do
     root :to => 'weeks#index'
   end
 
+  delete 'weeks/:id', to: 'weeks#destroy'
+
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
