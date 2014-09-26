@@ -19,6 +19,13 @@ class WeeksController < ApplicationController
     redirect_to weeks_url, notice: 'Week was successfully destroyed.'
   end
 
+  # POST /weeks.json
+  def create
+    @week = Week.new
+    @week.save
+    redirect_to @week, notice: 'Week was successfully created.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_week
