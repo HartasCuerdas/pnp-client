@@ -6,6 +6,10 @@ class WeeksController < ApplicationController
   def index
     @weeks = Week.all
     @str_today = I18n.l(Date.today, format: :m_d_wd)
+
+    lastWeek = @weeks.last
+    date_newWeekFirstDay = lastWeek.firstDay.to_date + 1.week
+    @str_newWeekFirstDay = date_newWeekFirstDay.strftime('%b %e')
   end
   
   # GET /weeks/1
