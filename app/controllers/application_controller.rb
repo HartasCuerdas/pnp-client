@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   
   # sets locale from url param
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    if ( ['en','es'].include? params[:locale] ) 
+      I18n.locale = params[:locale]
+    else
+      I18n.locale = I18n.default_locale
+    end
   end
 
 end
