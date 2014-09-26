@@ -31,12 +31,6 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-
-  patch 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
-  patch 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
-
-  patch 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
-
   scope '(:locale)' do
 
     get 'weeks', to: 'weeks#index', as: :weeks
@@ -45,6 +39,10 @@ Rails.application.routes.draw do
 
     root :to => 'weeks#index'
   end
+
+  patch 'ods/:id/toggle_o', to: 'ods#toggle_o', as: :ods_toggle_o
+  patch 'ods/:id/toggle_d', to: 'ods#toggle_d', as: :ods_toggle_d
+  patch 'days/:id/toggle_wr', to: 'days#toggle_wr', as: :days_toggle_wr
 
   delete 'weeks/:id', to: 'weeks#destroy'
 
